@@ -1,0 +1,11 @@
+#!/usr/bin/env python3
+from pathlib import Path
+
+music_folder = Path.home() / "PyLAMP-Program_Projects/DESKTOP/main.py/music"
+
+# List all mp3 files
+music_files = list(music_folder.glob("*.mp3"))
+
+print("Music files in project:")
+for f in music_files:
+    print(f.name)

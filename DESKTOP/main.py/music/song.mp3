@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+import shutil
+import os
+from pathlib import Path
+
+# Paths
+downloads = Path.home() / "Downloads"
+music_folder = Path.home() / "PyLAMP-Program_Projects/my_project/music"
+
+# Create music folder if it doesn't exist
+music_folder.mkdir(parents=True, exist_ok=True)
+
+# Copy all mp3 files
+for file in downloads.glob("*.mp3"):
+    shutil.copy(file, music_folder)
+    print(f"Copied {file.name} to {music_folder}")
